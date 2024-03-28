@@ -1,0 +1,8 @@
+services: 
+  django-apache2:
+    build: .
+    container_name: django-apache2
+    ports:
+      - '80:80'
+    volumes: 
+      - ./web/mysite:/var/web/mysite/html

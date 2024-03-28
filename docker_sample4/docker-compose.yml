@@ -1,0 +1,18 @@
+services: 
+  django-apache2:
+    build: ./api
+    container_name: django-api
+    ports:
+      - '8000:80'
+    volumes: 
+      - ./api/mysite:/var/web/mysite/html
+  spa:
+    build: ./spa
+    container_name: react-spa
+    ports:
+      - '3000:80'
+    volumes: 
+      - ./spa/myapp/build:/usr/local/apache2/htdocs/
+
+
+
